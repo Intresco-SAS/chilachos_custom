@@ -4,7 +4,7 @@
 	
 	'version': '12.0',
        
-	'summary': 'Rodbal - Intresoc',
+	'summary': 'Rodbal - Customization',
 	'description': """
 Plantillas de Reportes Colombia:
 ======================
