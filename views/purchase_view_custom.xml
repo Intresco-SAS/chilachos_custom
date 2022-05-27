@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<record id="purchase_order_form" model="ir.ui.view">
+	<record id="purchase_order_form_chilacos" model="ir.ui.view">
         <field name="name">purchase.order.form.chilacos</field>
         <field name="model">purchase.order</field>
-        <field name="arch" type="xml">
         <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
 
         <xpath expr="//notebook/page/field/tree/field[@name='name']" position="attributes">
             <attribute name="invisible">1</attribute>
@@ -28,13 +28,30 @@
 
         <xpath expr="//notebook/page/field/tree/field[@name='price_subtotal']" position="attributes">
             <attribute name="invisible">1</attribute>
-        </xpath>
-
-        <xpath expr="//field[@name='partner_ref']" position="replace">
-            <field name="picking_type_id" domain="[('code','=','incoming')]" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
-        </xpath>
+        </xpath>       
 
         </field>
     </record>
+
+    <record id="purchase_order_form_chilacos2" model="ir.ui.view">
+        <field name="name">purchase.order.form.chilacos2</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="replace">
+                <field name="picking_type_id" domain="[('code','=','incoming')]" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_stock_scrap_chilacos" 
+                  name="Bajas / Perdidas"
+                  action="stock.action_stock_scrap"
+                  parent="point_of_sale.pos_config_menu_catalog"/>
+    
+    <menuitem id="all_picking_chilacos" 
+              name="Transferencias"
+              action="stock.action_picking_tree_all"
+              parent="point_of_sale.pos_config_menu_catalog"/>
 </odoo>
            

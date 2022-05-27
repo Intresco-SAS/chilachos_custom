@@ -1,6 +1,6 @@
 
 {
-	'name': 'Modulo Especial Para Rodbal',
+	'name': 'Rodbal-Chilacos',
 	
 	'version': '12.0',
        
@@ -13,12 +13,10 @@ Plantillas de Reportes Colombia:
 	""",
 	'depends': [
 		
-		'account','purchase',
+		'account','purchase','purchase_stock','stock'
 	],
 	'data': [
-		
-		'views/purchase_view_custom.xml'	
-		
+		'views/purchase_view_custom.xml',
 	],
 	'installable': True,
 	'application': True,
