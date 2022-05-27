@@ -28,7 +28,15 @@
 
         <xpath expr="//notebook/page/field/tree/field[@name='price_subtotal']" position="attributes">
             <attribute name="invisible">1</attribute>
-        </xpath>       
+        </xpath>  
+        
+        <xpath expr="//button[@name='action_rfq_send']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath> 
+
+        <xpath expr="//button[@name='print_quotation']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
 
         </field>
     </record>
